@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron"></div>
+
+        <div class="row d-flex justify-content-center">
+
+
+
+            <div class="col-md-10 mt-3" id="userInfo">
+                <form>
+                    <div class="form-group">
+                        <label for="userName">Name</label>
+                        <input type="name" class="form-control" id="userName" placeholder="enter your name">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="userPhoto">Profile Picture</label>
+                        <input type="name" class="form-control" id="photo"
+                            placeholder="please enter the url of your profile picture">
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-primary" id="startQuiz">Go To Quiz</button>
+                </form>
+
+            </div>
+
+            <div class="modal fade" id="matches" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="matchesTitle">Here are the friends you have matched with!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-10 mt-3 d-none" id="questions">
+                <div class="form my-5">
+                    <div class="form-group">
+                        <label for="questionOne">Question One</label>
+                        <select class="form-control" id="questOne">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionTwo">Question Two</label>
+                        <select class="form-control" id="questTwo">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionThree">Question Three</label>
+                        <select class="form-control" id="questThree">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionFour">Question Four</label>
+                        <select class="form-control" id="questFour">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionFive">Question Five</label>
+                        <select class="form-control" id="questFive">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionSix">Question Six</label>
+                        <select class="form-control" id="questSix">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionSeven">Question Seven</label>
+                        <select class="form-control" id="questSeven">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionEight">Question Eight</label>
+                        <select class="form-control" id="questEight">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionNine">Question Nine</label>
+                        <select class="form-control" id="questNine">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionTen">Question Ten</label>
+                        <select class="form-control" id="questTen">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary mt-2" id="submit">Submit Quiz</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var name;
+    var photo;
+    var scores;
+
+
+
+    $(document).ready(() => {
+
+
+        $('#startQuiz').click(() => {
+            event.preventDefault();
+            name = $('#userName').val().trim();
+            photo = $('#photo').val().trim();
+
+            if (name === '') {
+                alert("Please fill out the form to continue");
+            } else if (photo === '') {
+                alert("Please fill out the form to continue");
+
+            } else {
+                $('#userInfo').addClass('d-none');
+                $('#questions').removeClass('d-none');
+                console.log(name)
+                console.log(photo)
+            }
+        })
+
+        $(document).on("click", '#submit', function () {
+            var one = $('#questOne').val();
+            var two = $('#questTwo').val();
+            var three = $('#questThree').val();
+            var four = $('#questFour').val();
+            var five = $('#questFive').val();
+            var six = $('#questSix').val();
+            var seven = $('#questSeven').val();
+            var eight = $('#questEight').val();
+            var nine = $('#questNine').val();
+            var ten = $('#questTen').val();
+
+            scores =
+                `${one}, ${two}, ${three}, ${four}, ${five}, ${six}, ${seven}, ${eight}, ${nine}, ${ten}`;
+            console.log(scores)
+
+
+            var friend = {
+                name: name,
+                photo: photo,
+                scores: scores
+            }
+
+            console.log(friend)
+            //                 < div class="card" style = "width: 18rem;" >
+            //                     <img src="..." class="card-img-top" alt="...">
+            //                         <div class="card-body">
+            //                             <h5 class="card-title">Card title</h5>
+            //                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            //                             <a href="#" class="btn btn-primary">Go somewhere</a>
+            //                         </div>
+            // </div>
+
+            $.post("/api/friends", friend, function (data) {
+                console.log(data)
+                if (data) {
+
+                    for (var i = 0; i < data.length; i++) {
+                        var card = $('<div>').addClass("card").css('width', '18rem');
+                        var img = $('<img>').addClass('card-img-top').attr('src', data[i]
+                            .photo);
+                        img.css('width', '100%')
+                        var body = $('<div>').addClass('card-body');
+                        var name = $('<h5>').addClass('card-title').text(data[i].name);
+                        body.append(name);
+                        card.append(img).append(body)
+                        $('.modal-body').append(card)
+                    }
+
+                    $('#matches').modal()
+
+                } else {
+                    alert("Something appears to have gone wrong.. Try again")
+                }
+            })
+
+            $('#questOne').val('');
+            $('#questTwo').val('');
+            $('questThree').val('');
+            $('questFour').val('');
+            $('questFive').val('');
+            $('questSix').val('');
+            $('questSeven').val('');
+            $('questEight').val('');
+            $('questNine').val('');
+            $('questTen').val('');
+
+
+        })
+
+
+
+
+
+
+
+
+    })
+</script>
