@@ -21,7 +21,7 @@ module.exports = function (app) {
 
         })
 
-        getFriends();
+        getFriends()
 
         user.getArr()
         user.calcScore()

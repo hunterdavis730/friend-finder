@@ -1,42 +1,3 @@
-// var friends = [{
-//         name: "John Snow",
-//         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzT2AJk_n2myzt36Thz8RBGe9mIppdkOQO50FXQsQYZ7kyCXEmhA",
-//         scores: [
-//             1,
-//             2,
-//             3,
-//             4,
-//             45,
-//             6,
-//             7,
-//             5,
-//             4,
-//             56
-//         ]
-//     },
-//     {
-//         name: "John Snow",
-//         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzT2AJk_n2myzt36Thz8RBGe9mIppdkOQO50FXQsQYZ7kyCXEmhA",
-//         scores: [
-//             1,
-//             2,
-//             3,
-//             4,
-//             45,
-//             6,
-//             7,
-//             5,
-//             4,
-//             56
-//         ]
-//     }
-// ]
-
-
-// module.exports = friends;
-
-
-
 var friends = [];
 
 var mysql = require("mysql");
@@ -79,9 +40,11 @@ connection.connect((err) => {
 })
 
 function getFriends() {
+    friends = [];
     connection.query("SELECT * FROM friends", function (err, resp) {
         if (err) throw err;
-        friend = [];
+
+
         var id;
         var name;
         var photo;
@@ -100,12 +63,13 @@ function getFriends() {
         }
 
 
-
+        console.log(friends)
 
     })
 
 }
 getFriends();
+console.log("this " + friends)
 // module.exports = friends;
 module.exports = {
     friends,

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../Style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -23,30 +24,40 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="surveyBody">
     <div class="container">
-        <div class="jumbotron"></div>
+        <div class="jumbotron">
+            <h1 class="text-center">Friend Match Survey</h1>
+            <div class="d-flex justify-content-center">
+                <a href="/" style="text-decoration: none"><button type="submit"
+                        class="btn btn-outline-primary d-block my-3 goBack">Go
+                        Back</button></a>
+            </div>
+        </div>
 
         <div class="row d-flex justify-content-center">
 
 
 
             <div class="col-md-10 mt-3" id="userInfo">
-                <form>
-                    <div class="form-group">
-                        <label for="userName">Name</label>
-                        <input type="name" class="form-control" id="userName" placeholder="enter your name">
+                <div class="card">
+                    <div class="card-body shadow-lg p-3 bg-white rounded">
+                        <form>
+                            <div class="form-group">
+                                <label for="userName">Name</label>
+                                <input type="name" class="form-control" id="userName" placeholder="enter your name">
 
+                            </div>
+                            <div class="form-group">
+                                <label for="userPhoto">Profile Picture</label>
+                                <input type="name" class="form-control" id="photo"
+                                    placeholder="please enter the url of your profile picture">
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-primary" id="startQuiz">Go To Quiz</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="userPhoto">Profile Picture</label>
-                        <input type="name" class="form-control" id="photo"
-                            placeholder="please enter the url of your profile picture">
-                    </div>
-
-                    <button type="submit" class="btn btn-outline-primary" id="startQuiz">Go To Quiz</button>
-                </form>
-
+                </div>
             </div>
 
             <div class="modal fade" id="matches" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -63,7 +74,8 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" id="modalClose"
+                                data-dismiss="modal">Close</button>
 
                         </div>
                     </div>
@@ -72,109 +84,113 @@
 
 
             <div class="col-md-10 mt-3 d-none" id="questions">
-                <div class="form my-5">
-                    <div class="form-group">
-                        <label for="questionOne">Question One</label>
-                        <select class="form-control" id="questOne">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionTwo">Question Two</label>
-                        <select class="form-control" id="questTwo">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionThree">Question Three</label>
-                        <select class="form-control" id="questThree">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionFour">Question Four</label>
-                        <select class="form-control" id="questFour">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionFive">Question Five</label>
-                        <select class="form-control" id="questFive">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionSix">Question Six</label>
-                        <select class="form-control" id="questSix">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionSeven">Question Seven</label>
-                        <select class="form-control" id="questSeven">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionEight">Question Eight</label>
-                        <select class="form-control" id="questEight">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionNine">Question Nine</label>
-                        <select class="form-control" id="questNine">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="questionTen">Question Ten</label>
-                        <select class="form-control" id="questTen">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary mt-2" id="submit">Submit Quiz</button>
+                <div class="card">
+                    <div class="card-body shadow-lg p-3 bg-white rounded">
+                        <div class="form my-5">
+                            <div class="form-group">
+                                <label for="questionOne">I experience my emotions intensely</label>
+                                <select class="form-control" id="questOne">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionTwo">I often eat too much</label>
+                                <select class="form-control" id="questTwo">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionThree">I use flattery to get ahead</label>
+                                <select class="form-control" id="questThree">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionFour">I tend to vote for liberal political candidates</label>
+                                <select class="form-control" id="questFour">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionFive">I become overwhelmed by events</label>
+                                <select class="form-control" id="questFive">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionSix">I believe there is no absolute right or wrong</label>
+                                <select class="form-control" id="questSix">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionSeven">I can't stand confrontations</label>
+                                <select class="form-control" id="questSeven">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionEight">I like to tidy up</label>
+                                <select class="form-control" id="questEight">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionNine">I choose my words with care</label>
+                                <select class="form-control" id="questNine">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="questionTen">I am often down in the dumps</label>
+                                <select class="form-control" id="questTen">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary mt-2" id="submit">Submit Quiz</button>
 
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,6 +211,7 @@
     $(document).ready(() => {
 
 
+
         $('#startQuiz').click(() => {
             event.preventDefault();
             name = $('#userName').val().trim();
@@ -210,8 +227,12 @@
                 $('#questions').removeClass('d-none');
                 console.log(name)
                 console.log(photo)
+                $('#userName').val('')
+                $('#photo').val('')
             }
         })
+
+
 
         $(document).on("click", '#submit', function () {
             var one = $('#questOne').val();

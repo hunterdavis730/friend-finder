@@ -1,0 +1,10 @@
+body {
+
+    background-color: blueviolet;
+
+}
+
+.jumbotron {
+    background-image: url(../../../Images/dark-honeycomb.png);
+    background-size: cover;
+}
